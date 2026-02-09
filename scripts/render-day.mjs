@@ -158,6 +158,9 @@ const vocabPerDay = 30;
 
 const vocabStart = (day - 1) * vocabPerDay;
 const vocabToday = pickSlice(vocabAll, vocabStart, vocabPerDay);
+if (vocabToday.length < vocabPerDay) {
+  throw new Error(`Not enough vocab in data/plan/vocab.json for Day  (need , have ). Expand vocab.json.`);
+}
 
 // Grammar progression: 1~2 items early. Simple mapping for now.
 const grammarToday = day === 1 ? grammarAll.slice(0, 2) : day === 2 ? grammarAll.slice(2, 4) : grammarAll.slice(0, 1);

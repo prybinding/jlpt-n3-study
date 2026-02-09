@@ -1,0 +1,50 @@
+[
+  {
+    "id":"g0001",
+    "title":"〜は〜です (X는 ~입니다)",
+    "pattern":"A は B です",
+    "reading":"~ wa ~ desu",
+    "ko":"A는 B입니다(정중한 기본 문장)",
+    "notes":["は는 '하'가 아니라 '와'로 읽음(주제 표시)","です는 문장을 정중하게 마무리"],
+    "examples":[
+      {"jp":"わたしは がくせいです。","kana":"わたしは がくせいです。","romaji":"wa-ta-shi wa ga-ku-se-i desu","ko":"저는 학생입니다."},
+      {"jp":"わたしは かんこくじんです。","kana":"わたしは かんこくじんです。","romaji":"wa-ta-shi wa kan-ko-ku-jin desu","ko":"저는 한국인입니다."}
+    ]
+  },
+  {
+    "id":"g0002",
+    "title":"〜がすきです (~을/를 좋아해요)",
+    "pattern":"N が すきです",
+    "reading":"~ ga su-ki desu",
+    "ko":"N을 좋아합니다(취향)",
+    "notes":["が는 '대상' 표시", "すき(好き)는 ‘좋아함’ 상태(형용동사)"],
+    "examples":[
+      {"jp":"にほんごが すきです。","kana":"にほんごが すきです。","romaji":"ni-hon-go ga su-ki desu","ko":"일본어를 좋아해요."},
+      {"jp":"コーヒーが すきです。","kana":"コーヒーが すきです。","romaji":"ko-o-hii ga su-ki desu","ko":"커피를 좋아해요."}
+    ]
+  },
+  {
+    "id":"g0003",
+    "title":"〜をください (~ 주세요)",
+    "pattern":"N を ください",
+    "reading":"~ o ku-da-sa-i",
+    "ko":"N을 주세요(정중)",
+    "notes":["を는 목적어 표시. 발음은 '오'", "주문/요청에 매우 자주"],
+    "examples":[
+      {"jp":"みずを ください。","kana":"みずを ください。","romaji":"mi-zu o ku-da-sa-i","ko":"물을 주세요."},
+      {"jp":"これを ください。","kana":"これを ください。","romaji":"ko-re o ku-da-sa-i","ko":"이거 주세요."}
+    ]
+  },
+  {
+    "id":"g0004",
+    "title":"〜ます / 〜ません (동사의 정중형 / 부정)",
+    "pattern":"V ます / V ません",
+    "reading":"~ ma-su / ~ ma-sen",
+    "ko":"합니다 / 하지 않습니다",
+    "notes":["초기에는 '사전형(たべる)'과 'ます형(たべます)'를 같이 익히면 좋음"],
+    "examples":[
+      {"jp":"たべます。","kana":"たべます。","romaji":"ta-be-ma-su","ko":"먹습니다."},
+      {"jp":"のみません。","kana":"のみません。","romaji":"no-mi-ma-sen","ko":"마시지 않습니다."}
+    ]
+  }
+]

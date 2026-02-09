@@ -42,15 +42,35 @@ function renderVocabItem(v) {
 }
 
 function renderGrammar(g) {
-  const ex = g.examples
+  const notesHtml = (g.notes ?? [])
+    .map((n) => `      <li>${n}</li>`)
+    .join('\n');
+
+  const exHtml = (g.examples ?? [])
     .map(
-      (e) => `- ${e.jp}\n  - 가나: ${e.kana}\n  - 발음: ${e.romaji}\n  - 뜻: ${e.ko}`,
+      (e) => `    <li>
+      <b>${e.jp}</b><br>
+      <span class="note">가나: <b>${e.kana}</b> · 발음(로마자): <b>${e.romaji}</b> · 뜻: <b>${e.ko}</b></span>
+    </li>`,
     )
     .join('\n');
 
-  const notes = (g.notes ?? []).map((n) => `- ${n}`).join('\n');
+  return `  <div class="card">
+    <h3>${g.title}</h3>
+    <p class="note"><b>패턴</b>: <code>${g.pattern}</code><br>
+    <b>읽기(로마자)</b>: ${g.reading}<br>
+    <b>뜻</b>: ${g.ko}</p>
 
-  return `### ${g.title}\n\n**패턴**: \`${g.pattern}\`\n\n**읽기(로마자)**: ${g.reading}\n\n**뜻**: ${g.ko}\n\n**포인트**\n${notes}\n\n**예문**\n${ex}`;
+    <h4>포인트</h4>
+    <ul>
+${notesHtml || '      <li>(포인트)</li>'}
+    </ul>
+
+    <h4>예문</h4>
+    <ol>
+${exHtml || '    <li>(예문)</li>'}
+    </ol>
+  </div>`;
 }
 
 function renderDay({ day, vocab, grammar, reviewSets }) {
@@ -71,7 +91,7 @@ function renderDay({ day, vocab, grammar, reviewSets }) {
     })
     .join('\n');
 
-  const grammarMd = grammar.map(renderGrammar).join('\n\n---\n\n');
+  const grammarHtml = grammar.map(renderGrammar).join('\n');
 
   const navTopPrev = day === 1 ? '<a class="disabled" href="#">← 이전</a>' : `<a href="{{ '/days/day-${prevId}.html' | relative_url }}">← 이전</a>`;
 
@@ -101,11 +121,7 @@ ${vocabHtml}
   </ol>
 
   <h2>2) 오늘의 문법 (${grammar.length}개)</h2>
-  <div class="card">
-
-${grammarMd}
-
-  </div>
+${grammarHtml}
 
   <h2>3) 복습 (SRS)</h2>
   <p class="note">원칙: ‘뜻 → 일본어’ 역방향으로 먼저 떠올리고, 그 다음에 확인.</p>

@@ -16,6 +16,12 @@ layout: none
       <a href="{{ '/days/day-001.html' | relative_url }}"><b>1일차</b> — 히라가나/가타카나 + 초기 핵심 표현</a>
       <div class="note">기초 세팅 + 발음 규칙 + 아주 기본 문장</div>
     </div>
+
+    <div class="card">
+      <span class="badge">DAY 002</span>
+      <a href="{{ '/days/day-002.html' | relative_url }}"><b>2일차</b> — (제목을 오늘 공부 후 수정)</a>
+      <div class="note">(요약)</div>
+    </div>
   </div>
 
   <hr>

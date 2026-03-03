@@ -156,10 +156,20 @@ const grammarAll = loadJson(grammarPath);
 // Plan: 30 vocab per day (as requested)
 const vocabPerDay = 30;
 
+if (!Array.isArray(vocabAll) || vocabAll.length === 0) {
+  throw new Error('data/plan/vocab.json is empty or invalid; please add vocab items.');
+}
+
 const vocabStart = (day - 1) * vocabPerDay;
-const vocabToday = pickSlice(vocabAll, vocabStart, vocabPerDay);
+let vocabToday = pickSlice(vocabAll, vocabStart, vocabPerDay);
+
+// If the vocab pool is shorter than the curriculum horizon, recycle items instead of failing.
+// This keeps the daily generator running; expand vocab.json later for better variety.
 if (vocabToday.length < vocabPerDay) {
-  throw new Error(`Not enough vocab in data/plan/vocab.json for Day ${day} (need ${vocabPerDay}, have ${vocabToday.length}). Expand vocab.json.`);
+  console.warn(
+    `[warn] Vocab pool has only ${vocabAll.length} items; recycling to fill Day ${day} (need ${vocabPerDay}).`,
+  );
+  vocabToday = Array.from({ length: vocabPerDay }, (_, i) => vocabAll[(vocabStart + i) % vocabAll.length]);
 }
 
 // Grammar progression: 1~2 items early. Simple mapping for now.

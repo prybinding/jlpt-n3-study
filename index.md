@@ -52,6 +52,12 @@ layout: none
       <a href="{{ '/days/day-007.html' | relative_url }}"><b>7일차</b> — 자동 생성</a>
       <div class="note">단어 30 + 문법 + 복습(SRS)</div>
     </div>
+
+    <div class="card">
+      <span class="badge">DAY 008</span>
+      <a href="{{ '/days/day-008.html' | relative_url }}"><b>8일차</b> — 자동 생성</a>
+      <div class="note">단어 30 + 문법 + 복습(SRS)</div>
+    </div>
   </div>
 
   <hr>

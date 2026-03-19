@@ -142,6 +142,12 @@ layout: none
       <a href="{{ '/days/day-022.html' | relative_url }}"><b>22일차</b> — 자동 생성</a>
       <div class="note">단어 30 + 문법 + 복습(SRS)</div>
     </div>
+
+    <div class="card">
+      <span class="badge">DAY 023</span>
+      <a href="{{ '/days/day-023.html' | relative_url }}"><b>23일차</b> — 자동 생성</a>
+      <div class="note">단어 30 + 문법 + 복습(SRS)</div>
+    </div>
   </div>
 
   <hr>
